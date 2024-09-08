@@ -123,10 +123,10 @@ menus:
 
 # Comment settings
 comment:
-  provider: gitalk # false (default), "disqus", "gitalk", "valine"
+  provider: false # false (default), "disqus", "gitalk", "valine"
 
   # Disqus settings
-  disqus_username: renovamen
+  disqus_username: Kilo
 
   # Gitalk settings
   # https://github.com/gitalk/gitalk
@@ -136,7 +136,7 @@ comment:
     repo: gitalk-comments
     owner: This-is-an-Apple
     admin:
-      - Renovamen
+      - Kilo
       - This-is-an-Apple
 
   # Valine settings
