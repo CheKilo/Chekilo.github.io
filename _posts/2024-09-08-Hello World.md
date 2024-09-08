@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello Word
-header-img: img/in-post/2020-10-07/header.jpg
+header-img: img/in-post/head/3.jpg
 header-style: text
 catalog: true
 tags:
