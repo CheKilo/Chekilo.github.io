@@ -113,7 +113,7 @@ menus:
 #      - title: Theme
 #        font: fas fa-meteor
 #        url: /theme/
-  - title: Update
+  - title: Blog
     font: fas fa-archive
     url: /archive/
   - title: Links
