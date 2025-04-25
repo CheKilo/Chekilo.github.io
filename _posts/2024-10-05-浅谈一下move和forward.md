@@ -9,6 +9,7 @@ tags:
   - std标准库
   - 移动语义
   - 完美转发
+  - 学习
 ---
 本文真的是浅浅谈一下std::move和std::forward。
 
