@@ -15,10 +15,9 @@ tags:
 这里会不定期更新一些学习笔记，可能偶尔还会有些碎碎念。
 ### 博客的第一条代码，献给初恋cpp。
 ```c++
-#include<stdio>
 #include<iostream>
 int main(){
-  cout<<Hello world<<endl;
+  std::cout<<"Hello world" <<std::endl;
   return 0;
 }
 ```
