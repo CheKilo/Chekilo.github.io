@@ -1,7 +1,8 @@
 // Variables
+@use "sass:color";
 
 $gray: gray;
-$gray-l: lighten(black, 75%);
+$gray-l: color.adjust(black, $lightness: 75%);
 $white-faded: rgba(white, 0.8);
 $gray-light: #eee;
 $brand-primary: #377bb5;

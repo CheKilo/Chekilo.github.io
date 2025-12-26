@@ -1,13 +1,15 @@
 // styles for menu, borrowed a lot from https://codepen.io/tiansial/pen/JZdXLV
+@use "sass:math";
+@use "sass:color";
 
 // Variables
 $menu-btn-size: 50px;
 $menu-btn-radius: 70px;
-$menu-btn-transform-origin: $menu-btn-radius + (0.8 * $menu-btn-size / 2);
+$menu-btn-transform-origin: $menu-btn-radius + math.div(0.8 * $menu-btn-size, 2);
 
 // Colors
 $menu-btn-primary-color: $brand-primary;
-$menu-btn-gray: lighten(black, 35%);
+$menu-btn-gray: color.adjust(black, $lightness: 35%);
 
 // Easings
 $bounce: cubic-bezier(0.5, -0.5, 0.5, 1.5);
@@ -44,8 +46,8 @@ $longer-time: ($time * 2);
   .menu-svg {
     $wider: 6px;
     position: absolute;
-    bottom: -$wider / 2;
-    right: -$wider / 2;
+    bottom: math.div(-$wider, 2);
+    right: math.div(-$wider, 2);
     width: $menu-btn-size + $wider;
     height: $menu-btn-size + $wider;
     .menu-border {
@@ -167,8 +169,8 @@ $longer-time: ($time * 2);
     $menu-btn-point-size: 5px;
     width: $menu-btn-point-size;
     height: $menu-btn-point-size;
-    margin-left: -$menu-btn-point-size/2;
-    margin-top: -$menu-btn-point-size/2;
+    margin-left: math.div(-$menu-btn-point-size, 2);
+    margin-top: math.div(-$menu-btn-point-size, 2);
     // background-color: $menu-btn-primary-color;
     background-color: #fff;
     border-radius: 50%;
@@ -178,11 +180,11 @@ $longer-time: ($time * 2);
     @include transition($menu-btn-transition);
 
     &:first-child {
-      margin-left: -10px - $menu-btn-point-size/2;
+      margin-left: -10px - math.div($menu-btn-point-size, 2);
     }
 
     &:last-child {
-      margin-left: 10px - $menu-btn-point-size/2;
+      margin-left: 10px - math.div($menu-btn-point-size, 2);
     }
   }
 }
@@ -229,6 +231,6 @@ $longer-time: ($time * 2);
   .icon-theme:before {
     opacity: 0;
     visibility: hidden;
-    @include transition(all $longer-time $bezier calc((-$delay) / 2));
+    @include transition(all $longer-time $bezier math.div(-$delay, 2));
   }
 }
