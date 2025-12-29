@@ -92,6 +92,7 @@ sass:
 markdown: kramdown
 kramdown:
   input: GFM # use Github Flavored Markdown !important
+  math_engine: mathjax # 启用数学公式渲染
   syntax_highlighter_opts:
     disable: true # we use highlight.js for syntax highlighting, so we disable rouge here
 

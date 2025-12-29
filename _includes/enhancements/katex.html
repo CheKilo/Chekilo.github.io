@@ -3,6 +3,7 @@
 <script type="text/javascript" src="{{ _cdn.katex.js }}"></script>
 
 <script>
+  // 处理旧版 kramdown 生成的 script 标签格式
   $("script[type='math/tex']").replaceWith(function () {
     var tex = $(this).text();
     return katex.renderToString(tex, { displayMode: false });
@@ -11,5 +12,34 @@
   $("script[type='math/tex; mode=display']").replaceWith(function () {
     var tex = $(this).html();
     return katex.renderToString(tex.replace(/%.*/g, ""), { displayMode: true });
+  });
+
+  // 处理新版 kramdown 生成的 \( \) 和 \[ \] 格式
+  document.addEventListener("DOMContentLoaded", function() {
+    // 处理块级公式 \[ \]
+    document.body.innerHTML = document.body.innerHTML.replace(
+      /\\\[([\s\S]*?)\\\]/g,
+      function(match, tex) {
+        try {
+          return katex.renderToString(tex, { displayMode: true });
+        } catch(e) {
+          console.error("KaTeX error:", e);
+          return match;
+        }
+      }
+    );
+    
+    // 处理行内公式 \( \)
+    document.body.innerHTML = document.body.innerHTML.replace(
+      /\\\(([\s\S]*?)\\\)/g,
+      function(match, tex) {
+        try {
+          return katex.renderToString(tex, { displayMode: false });
+        } catch(e) {
+          console.error("KaTeX error:", e);
+          return match;
+        }
+      }
+    );
   });
 </script>
