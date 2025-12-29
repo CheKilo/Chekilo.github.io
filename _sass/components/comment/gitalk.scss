@@ -2,8 +2,6 @@
     customize styles for gitalk
     modified from https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
 */
-@use "sass:math";
-@use "sass:meta";
 
 .markdown-body {
   -ms-text-size-adjust: 100%;
@@ -663,8 +661,8 @@ $gt-mask-z-index: 9999;
 
 /* functions & mixins */
 @function em($px, $base-size: $gt-size-base) {
-  @if meta.type-of($px) == "number" and math.unit($px) == "px" {
-    @return math.div($px, $base-size) * 1em;
+  @if type-of($px) == "number" and unit($px) == "px" {
+    @return ($px / $base-size) * 1em;
   } @else {
     @return $px * 1px;
   }
@@ -780,8 +778,8 @@ $gt-size-avatar-mobi: em(32px);
       display: block;
       top: 0;
       left: 50%;
-      margin-top: -(math.div($gt-size-loader-dot, 2));
-      margin-left: -(math.div($gt-size-loader-dot, 2));
+      margin-top: -($gt-size-loader-dot / 2);
+      margin-left: -($gt-size-loader-dot / 2);
       width: $gt-size-loader-dot;
       height: $gt-size-loader-dot;
       background-color: $gt-color-loader;

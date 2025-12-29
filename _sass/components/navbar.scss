@@ -1,5 +1,4 @@
 // Navigation
-@use "sass:color";
 
 // Renovamen: modify styles of navbar menu on mobile
 .mobile-nav {
@@ -49,7 +48,7 @@
     }
 
     p {
-      color: color.adjust($brand-primary, $lightness: 50%);
+      color: lighten($brand-primary, 50%);
     }
 
     .mobile-menu-avatar {
@@ -65,8 +64,8 @@
         height: 90px;
         margin: 0 auto;
         border-radius: 100%;
-        background-color: color.adjust($brand-primary, $lightness: 40%);
-        box-shadow: 0px 10px 25px 0px rgba(color.adjust($brand-primary, $lightness: 40%), 0.27);
+        background-color: lighten($brand-primary, 40%);
+        box-shadow: 0px 10px 25px 0px rgba(lighten($brand-primary, 40%), 0.27);
         img {
           padding: 2px;
           max-width: 100%;
@@ -92,7 +91,7 @@
         .fa-stack {
           width: 20px;
           .fa-circle {
-            color: color.adjust($brand-primary, $lightness: 10%);
+            color: lighten($brand-primary, 10%);
             display: none;
           }
         }
@@ -103,7 +102,7 @@
         bottom: -10px;
         width: 18em;
         height: 0.05em;
-        background-color: color.adjust($brand-primary, $lightness: 50%);
+        background-color: lighten($brand-primary, 50%);
         left: 50%;
         @include transform(translateX(-50%));
       }
@@ -120,7 +119,7 @@
           a {
             font-size: 17px;
             text-decoration: none;
-            color: color.adjust($brand-primary, $lightness: 50%);
+            color: lighten($brand-primary, 50%);
           }
         ul {
           width: 250px;
@@ -131,7 +130,7 @@
             a {
               font-size: 16px;
               text-decoration: none;
-              color: color.adjust($brand-primary, $lightness: 40%);
+              color: lighten($brand-primary, 40%);
             }
           }
         }
